@@ -1,0 +1,40 @@
+[]-update membership
+[]- add address
+[]-delete address
+[]-change password
+[]-add image
+[]- all customers
+
+{
+    "addressId": userId + randomNo,
+    "isPrimary": true,
+    "address":"Midnapore, West Bengal",
+    "lat":22.00520
+    "lng":88.33550
+}
+
+next-feature
+[] - no password login 
+[] - setup redis in get all customers
+[] - data agrigation --delete address
+algorithm
+
+OTP sending process
+
+step 1: get mobile no from request
+step 2: search that no in OTP collection
+step 3:  if OTP exist in OTP collection then send that  OTP to mobile no 
+step 4: if not found then create OTP save to database and send to mobile no
+
+OTP verification process
+
+step 1: get mobile no  and OTP from request
+step 2: search that no in OTP collection
+step 3: if OTP exist in OTP collection then verify that OTP 
+step 4: if successfully verify the OTP then delete that data
+step 5: if mobileNo exist in user collection 
+step 6: then send isNewUser as false with token
+step 7: if not found in user collection then send isNewUser as true with token  
+step 8: if OTP not verify  then send error
+
+
