@@ -62,6 +62,9 @@ export const updateStatus = async (req, res, next) => {
 		const result = await adminService.changeStatus({ email })
 		return res.status(200).json(result)
 	} catch (error) {
-		return res.status(error.statusCode).json()
+		return res
+			.status(error.statusCode)
+			.json(error.statusCode)
+			.json(FormattedData(false, 0, null, error.message))
 	}
 }
